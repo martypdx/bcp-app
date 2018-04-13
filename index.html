@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #result {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaa;
+        }
+
+        .done {
+            color: white;
+            background: steelblue;
+        }
+
+    </style>
 </head>
 <body>
     <h1>run some code</h1>
@@ -14,6 +27,8 @@
     </div>
     <input id="input-number" type="number" value="4">
     <button onclick="getSquare()">Get Square</button>
+
+    <div id="result"></div>
 
     <script>
         function getSquare() {
@@ -30,6 +45,19 @@
             
             // calculate the answer:
             var answer = Math.pow(x, exponent);
+
+            // get the result div
+            var result = document.getElementById('result');
+
+            // write the response to the div:
+            result.innerHTML = '<em>' + x 
+                + '</em>' + ' to the <em>' + exponent 
+                + '</em> is <strong>' + answer + '</strong>';
+
+            // add some style!
+            // result.style.color = 'white';
+            // result.style.background = 'steelblue';
+            result.classList.add('done');
 
             // log the answer to the console:
             console.log(x, 'to the', exponent, 'is', answer);
